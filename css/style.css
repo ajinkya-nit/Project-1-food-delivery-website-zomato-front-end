@@ -1,0 +1,262 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+header div img {
+    height: 40px;
+    width: auto;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+header ul li {
+    display: flex;
+    gap: 1.5rem;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+header ul li a:hover {
+    background-color: #ff7e8b;
+    color: white;
+    transform: translateY(-2px);
+}
+
+header ul li a:last-child {
+    background-color: #ff7e8b;
+    color: white;
+}
+
+header ul li a:last-child:hover {
+    background-color: #e91e63;
+}
+
+/* Main section styles */
+main {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 80px; /* Account for fixed header */
+}
+
+main p {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    animation: fadeInUp 1s ease-out;
+}
+/* Main logo styles */
+main .main-logo {
+    width: 300px;
+    height: auto;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+    animation: fadeInDown 1s ease-out;
+}
+
+/* Update the existing main p styles to have less margin-bottom */
+main p {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+/* Add new animation for logo */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive styles for the logo */
+@media (max-width: 768px) {
+    main .main-logo {
+        width: 250px;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    main .main-logo {
+        width: 200px;
+        margin-bottom: 0.8rem;
+    }
+}
+
+
+main input[type="text"] {
+    width: 100%;
+    max-width: 600px;
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+main input[type="text"]:focus {
+    box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+    transform: translateY(-2px);
+}
+
+main input[type="text"]::placeholder {
+    color: #666;
+}
+
+/* Footer styles */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: auto;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    header ul {
+        gap: 1rem;
+    }
+    
+    header ul li {
+        gap: 1rem;
+    }
+    
+    header ul li a {
+        padding: 0.3rem 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    main {
+        padding: 2rem 1rem;
+        padding-top: 120px;
+    }
+    
+    main p {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    main input[type="text"] {
+        max-width: 90%;
+        padding: 0.8rem 1.2rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header ul li {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    main p {
+        font-size: 2rem;
+    }
+    
+    main input[type="text"] {
+        max-width: 95%;
+    }
+}
+
+/* Additional hover effects and improvements */
+main input[type="text"]:hover {
+    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+}
+
+/* Smooth scrolling for better UX */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ff7e8b;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #e91e63;
+}
